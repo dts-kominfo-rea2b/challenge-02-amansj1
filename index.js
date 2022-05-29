@@ -23,23 +23,36 @@ function lakukanLooping(arrPegawai) {
 
       Contoh: ["Aisyah Nirmala", "Mansur Faisal", ...]
   */
-  let hasilLooping = null;
+  let hasilLooping = [];
+  arrPegawai.forEach(data => {
+    hasilLooping.push(data.namaDepan+' '+data.namaBelakang)
+  });
 
   /*
     TODO 2: Buatlah sebuah variabel bernama "jumlahPria"
       yang berisi jumlah pria dari masing masing pegawai
   */
-  let jumlahPria = null;
+  let jumlahPria = 0;
+  arrPegawai.forEach(data =>{
+    if(data.jenisKelamin === 'M'){
+      return jumlahPria++
+    }
+  });
 
   /*
     TODO 3: Buatlah sebuah variabel bernama "jumlahWanita"
       yang berisi jumlah wanita dari masing masing pegawai
   */
-  let jumlahWanita = null;
-
+  let jumlahWanita = 0;
+  arrPegawai.forEach(data =>{
+    if(data.jenisKelamin === 'F'){
+      return jumlahWanita++
+    }
+  });
   /*
     TODO 4: Buatlah sebuah variabel bernama "komentar"
       yang akan mengomentari apakah lebih banyak Pria atau Wanita
+
       
       Apabila Pria lebih banyak dari Wanita, maka komentar akan berisi:
         "Jumlah Pria lebih banyak dari Wanita"
@@ -48,7 +61,19 @@ function lakukanLooping(arrPegawai) {
       Apabila imbang, maka komentar akan berisi:
         "Jumlah Pria dan Wanita berimbang"
   */
-  let komentar = null;
+  let komentar = '';
+
+  if (jumlahPria > jumlahWanita){
+    komentar = 'Jumlah Pria lebih banyak dari Wanita';
+  }
+  if(jumlahPria < jumlahWanita){
+    komentar = 'Jumlah Wanita lebih banyak dari Pria';
+  }
+  if(jumlahPria === jumlahWanita){
+    komentar = 'Jumlah Pria dan Wanita berimbang';
+  }
+
+  // console.log(komentar);
 
   // ! JANGAN DIMODIFIKASI
   return {
